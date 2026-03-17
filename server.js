@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Books from "./models/Books.js";
+import Book from "./models/Books.js";
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send(" Your server is now working");
 });
 app.get("/api/books", async (req, res) => {
-  const book = await Book.find();
+  const books = await Book.find();
   res.json(books);
 });
 
